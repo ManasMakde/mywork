@@ -1,1 +1,1 @@
-To download the game: link will be added soon
+To download the game: https://bit.ly/3nhjm39
