@@ -1,1 +1,1 @@
-Just copy paste the entire hecker file and run the hecker.exe 
+To download the game: link will be added soon
