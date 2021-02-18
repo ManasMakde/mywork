@@ -1,0 +1,39 @@
+// just a lousy script to find subscribers WITHOUT youtube API key
+// 
+// limitation
+// ---------
+// * only gives subcount in abbreviation i.e. 3.1M , 106k
+//
+// * works mostly for small channels
+//
+//
+using System;
+using System.Net;
+
+namespace trial
+{
+    class Program
+    {
+
+        static string sub_count()
+        {
+            string site_url = "https://www.youtube.com/channel/UCB86RbiIrnAlArbDpZfPAMQ";//insert your youtube channel link here
+            WebClient client = new WebClient();
+            string html_text= client.DownloadString(site_url);
+            string[] all = html_text.Split('"');
+            string sub_count = all[Array.IndexOf(all, "subscriberCountText")+4];
+            return sub_count;
+        }
+        static void Main(string[] args)
+        {
+            try
+            {
+                Console.WriteLine(sub_count());
+            }
+            catch { 
+                Console.WriteLine("Invalid Link or Unkown error occured...\n<try restarting>"); 
+            }
+            Console.ReadKey();
+        }
+    }
+}
